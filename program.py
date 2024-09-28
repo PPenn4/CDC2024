@@ -40,9 +40,14 @@ for s in short:
     r = requests.get(s.get("reviews"))
     reviews = r.json()
     review: list[str] = []
+    p: float = 0
+    num_of_ps = 0
     for rev in reviews:
+        p += float(rev.get("polarity"))
         review.append(rev.get("text"))
-    places.append([s.get("id"), s.get("name"), s.get("polarity"),review])
+        num_of_ps += 1
+    p /= num_of_ps
+    places.append([s.get("id"), s.get("name"), p, review])
     i += 1;
 
 print(places)
