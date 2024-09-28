@@ -32,23 +32,14 @@ def findMinRating(collection: list) -> int:
 
 places: list = []
 
-i = 0
 
 for s in short:
-    if i == 5:
-        break
     r = requests.get(s.get("reviews"))
     reviews = r.json()
     review: list[str] = []
-    p: float = 0
-    num_of_ps = 0
     for rev in reviews:
-        p += float(rev.get("polarity"))
         review.append(rev.get("text"))
-        num_of_ps += 1
-    p /= num_of_ps
-    places.append([s.get("id"), s.get("name"), p, review])
-    i += 1;
+    places.append([s.get("id"), s.get("name"), s.get("polarity"), review])
 
 print(places)
 
