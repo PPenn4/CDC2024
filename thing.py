@@ -44,7 +44,7 @@ for rev in df['reviews']:
 df['Average Rating'] = avgRates
 df['Number of English Reviews'] = engCount
 df = df.sort_values(by=['numReviews'], ascending=False)
-top30 = df.head(30).reset_index()
+top30 = df.head(15).reset_index()
 
 sns.barplot(data = top30, x = 'Number of English Reviews', y = 'name')
 plt.show()
