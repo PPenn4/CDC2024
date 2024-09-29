@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <link
+        rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+        type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Tourism Data Viewer</title>
+    <script src="maprunner.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Trailblazers</h1>
+    <form id="selectionForm">
+        <label for="city">Select a city:</label>
+        <select id="city" name="city">
+            <option value="Amsterdam">Amsterdam</option>
+            <option value="Barcelona">Barcelona</option>
+            <option value="Berlin">Berlin</option>
+            <option value="Dubai">Dubai</option>
+            <option value="London">London</option>
+            <option value="Paris">Paris</option>
+            <option value="Rome">Rome</option>
+            <option value="Tuscany">Tuscany</option>
+        </select>
+
+        <label for="category">Select a category:</label>
+        <select id="category" name="category">
+            <option value="accommodation">Accommodation</option>
+            <option value="restaurant">Restaurant</option>
+            <option value="poi">Point of Interest</option>
+            <option value="attraction">Attraction</option>
+        </select>
+
+        <button type="button" id="fetchDataButton">Fetch Data</button>
+    </form>
+
+    <div id="map-container">
+        <div id='map'></div>
+    </div>
+
+    <div id="results">
+        <h2>Top 15 Results for - </h2>
+        <table>
+            <thead>
+                <tr><th></th><th>Name</th><th>Address</th><th>Longitude, Latitude</th><th>Polarity</th><th>Reviews</th></tr>
+            </thead>
+            <tbody id="results-body">
+            </tbody>
+        </table>
+    </div>
+
+    <div id="graph-container">
+        <canvas id="graph"></canvas>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

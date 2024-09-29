@@ -1,0 +1,229 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #2c3e50;
+    font-size: 2.5em;
+    animation: fadeIn 2s ease-in-out;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1.5s ease-in-out;
+}
+
+#map-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    background-color: #f0f0f0; /* Add background to avoid overlap issues */
+}
+
+#map {
+    height: 55vh;
+    width: 90vw;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    margin-top: 10px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+/* Improved Dropdown */
+select {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    -webkit-appearance: none; /* Removes default arrow on Chrome */
+    -moz-appearance: none; /* Removes default arrow on Firefox */
+    appearance: none; /* Removes default arrow on all browsers */
+    background-color: #fff;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/32/32195.png'); /* Custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+select:hover {
+    border-color: #3498db;
+}
+
+select:focus {
+    outline: none;
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+}
+
+#results {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1000px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    animation: slideUp 1.5s ease-in-out;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    font-weight: 700;
+}
+
+td:hover {
+    background-color: #f1f1f1;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Sticky Section Header */
+h2 {
+    text-align: center;
+    position: -webkit-sticky; /* For Safari support */
+    position: sticky;
+    background-color: #f0f0f0; /* Matches the page background */
+    padding: 20px;
+    margin: 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* General Styling for Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    animation: slideUp 1.5s ease-in-out;
+}
+
+th {
+    position: sticky;
+    background-color: #3498db;
+    color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Adjust `td` Hover Effect */
+td:hover {
+    background-color: #f1f1f1;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Graph Container Styling */
+#graph-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically (if applicable) */
+    margin: 20px auto; /* Center with automatic margins */
+    width: 100%; /* Full width to allow centering */
+    max-width: 1000px; /* Increased width for the container */
+    padding: 20px;
+}
+
+/* Graph Styling */
+#graph {
+    max-width: 100%; /* Ensure the graph does not overflow its container */
+    height: 700px; /* Increased height for better visibility */
+}
