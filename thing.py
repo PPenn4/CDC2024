@@ -34,17 +34,18 @@ for rev in df['reviews']:
         revData.append(thing)
 
     revDF = pd.DataFrame.from_dict(revData)
+    engCount.append(len(revDF[revDF['language'] == 'en']))
     revDF.drop(columns=['polarity', 'time', 'wordsCount', 'details', 'text', 'source'], inplace=True)
     for ind in revDF.index:
         if type(revDF['rating'][ind]) == str:
             revDF.drop(ind, inplace=True)
     avgRates.append(revDF['rating'].mean())
-    engCount.append(revDF['language'].value_counts().get('en', 0))
 
 df['Average Rating'] = avgRates
 df['Number of English Reviews'] = engCount
 df = df.sort_values(by=['numReviews'], ascending=False)
-top30 = df.head(15).reset_index()
+top15 = df.head(15).reset_index()
 
-sns.barplot(data = top30, x = 'Number of English Reviews', y = 'name')
+ax = sns.barplot(data = top15, x = 'Number of English Reviews', y = 'name')
+ax.set(xlabel = 'Number of English Reviews', ylabel = 'Location Names')
 plt.show()
