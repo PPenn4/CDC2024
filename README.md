@@ -1,1 +1,3 @@
 # CDC2024
+
+Trailblazer is a web-based application that uses the Tour-Pedia and MapBox APIs to generate the top 15 locations of a specified category (accommodations, restaurants, attractions, point of interest) within a specified city (Amsterdam, Barcelona, Berlin, Dubai, Rome, Tuscany, London), sorted by number of total reviews. There is a graph below the list showing how many English reviews each location received. The location in the top 15 that received the most English reviews has a star next to it, while the location that received the least English reviews has a Sinhalese script next to it.
