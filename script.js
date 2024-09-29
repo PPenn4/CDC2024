@@ -1,3 +1,15 @@
+document.getElementById("fetchDataButton").addEventListener("click", function() {
+    setTimeout(() => {
+        document.getElementById("map-container").classList.remove("hidden");
+        document.getElementById("results").classList.remove("hidden");
+        document.getElementById("graph-container").classList.remove("hidden");
+        document.getElementById("graph").classList.remove("hidden");
+        document.getElementById("results_header").classList.remove("hidden");
+        document.getElementById("results_table").classList.remove("hidden");
+    }, 3000);
+});
+
+
 document.getElementById('fetchDataButton').addEventListener('click', () => {
     const city = document.getElementById('city').value;
     const category = document.getElementById('category').value;

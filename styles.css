@@ -35,9 +35,9 @@ form {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    position: -webkit-sticky; /* Safari */
+    position: -webkit-sticky;
     position: sticky;
-    background-color: #f0f0f0; /* Add background to avoid overlap issues */
+    background-color: #f0f0f0; 
 }
 
 #map {
@@ -54,7 +54,6 @@ label {
     color: #2c3e50;
 }
 
-/* Improved Dropdown */
 select {
     padding: 10px;
     margin: 10px 0;
@@ -62,11 +61,11 @@ select {
     border-radius: 5px;
     font-size: 1em;
     width: 100%;
-    -webkit-appearance: none; /* Removes default arrow on Chrome */
-    -moz-appearance: none; /* Removes default arrow on Firefox */
-    appearance: none; /* Removes default arrow on all browsers */
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none; 
     background-color: #fff;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/32/32195.png'); /* Custom dropdown arrow */
+    background-image: url('https://cdn-icons-png.flaticon.com/512/32/32195.png'); 
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 16px;
@@ -169,18 +168,16 @@ tr:nth-child(even) {
     }
 }
 
-/* Sticky Section Header */
 h2 {
     text-align: center;
-    position: -webkit-sticky; /* For Safari support */
+    position: -webkit-sticky; 
     position: sticky;
-    background-color: #f0f0f0; /* Matches the page background */
+    background-color: #f0f0f0; 
     padding: 20px;
     margin: 0;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* General Styling for Table */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -202,7 +199,6 @@ th, td {
     transition: background-color 0.3s ease;
 }
 
-/* Adjust `td` Hover Effect */
 td:hover {
     background-color: #f1f1f1;
 }
@@ -211,19 +207,23 @@ tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* Graph Container Styling */
 #graph-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically (if applicable) */
-    margin: 20px auto; /* Center with automatic margins */
-    width: 100%; /* Full width to allow centering */
-    max-width: 1000px; /* Increased width for the container */
+    justify-content: center;
+    align-items: center; 
+    margin: 20px auto; 
+    width: 100%; 
+    max-width: 1000px; 
     padding: 20px;
 }
 
-/* Graph Styling */
 #graph {
-    max-width: 100%; /* Ensure the graph does not overflow its container */
-    height: 700px; /* Increased height for better visibility */
+    max-width: 100%; 
+    height: 700px; 
+}
+
+
+.hidden {
+    display: none;
+    height: 0;
+    transition: height 0.5s ease; 
 }
