@@ -25,6 +25,7 @@ df.drop(columns= ['subCategory', 'details', 'originalId', 'lat', 'lng', 'locatio
 
 
 avgRates = []
+engCount = []
 for rev in df['reviews']:
     revData = []
     res = requests.get(rev)
@@ -33,10 +34,16 @@ for rev in df['reviews']:
         revData.append(thing)
 
     revDF = pd.DataFrame.from_dict(revData)
-    revDF.drop(columns=['polarity', 'language', 'time', 'wordsCount', 'details', 'text', 'source'], inplace=True)
+    revDF.drop(columns=['polarity', 'time', 'wordsCount', 'details', 'text', 'source'], inplace=True)
     for ind in revDF.index:
         if type(revDF['rating'][ind]) == str:
             revDF.drop(ind, inplace=True)
     avgRates.append(revDF['rating'].mean())
-df['Average Rates'] = avgRates
-print(df)
+    engCount.append(revDF['language'].value_counts().get('en', 0))
+
+df['Average Rating'] = avgRates
+df['Number of English Reviews'] = engCount
+df = df.sort_values(by=['numReviews'], ascending=False)
+
+sns.barplot(data = df, x = 'Number of English Reviews', y = 'name')
+plt.show()
