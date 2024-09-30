@@ -48,4 +48,4 @@ top15 = df.head(15).reset_index()
 
 ax = sns.barplot(data = top15, x = 'Number of English Reviews', y = 'name')
 ax.set(xlabel = 'Number of English Reviews', ylabel = 'Location Names')
-plt.show()
+ax.plot()
